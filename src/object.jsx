@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import GlobalObject from './object';
 
-class App extends Component {
+class GlobalObject extends Component {
   constructor(props) {
     super(props);
   }
@@ -9,10 +8,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <GlobalObject />
+        Object contents as list 
       </div>
     );
   }
 }
 
-export default App;
+export default GlobalObject;
