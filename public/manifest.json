@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+
+  "name": "Global Object Finder",
+  "description": "This extension displays the contents of dataLayer and utag global objects",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/"
+  ]
+}
