@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
 
   entry: [
-    './index.js'
+    './index.js',
   ],
 
   output: {
@@ -13,7 +13,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.js', '.jsx', '.scss', '.json'],
+    extensions: ['', '.js', '.jsx', '.css', '.json'],
     modulesDirectories: ['node_modules']  
   },
 
