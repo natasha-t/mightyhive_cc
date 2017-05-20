@@ -1,4 +1,4 @@
-# mightyhive coding challenge
+# mightyhive coding challenge :mag_right:
 
 This chrome extension displays the contents of dataLayer and utag global objects
 
