@@ -4,7 +4,7 @@ This chrome extension displays the contents of dataLayer and utag global objects
 
 ## Usage
 
-#### Before uploading the Public directory into the browser you will need to run the commands listed below. 
+#### Before uploading the public directory into the browser you will need to run the commands listed below. 
 
 <br>
 
