@@ -1,6 +1,6 @@
+// create script tag with source as getGlobalVars, append to page
 const s = document.createElement('script');
-// TODO: add "script.js" to web_accessible_resources in manifest.json
-s.src = chrome.extension.getURL('globalVars.js');
+s.src = chrome.extension.getURL('getGlobalVars.js');
 s.onload = function() {
     this.remove();
 };
@@ -8,16 +8,13 @@ s.onload = function() {
 (document.head || document.documentElement).appendChild(s);
 
 
+// add event liseners to this injected script (content script) to retrieve object data
+  // add object data to chrome local storage 
+
 document.addEventListener('dataLayerFromPage', function(e) {
-
-  console.log('dataLayer: ', JSON.stringify(e.detail));
-
   chrome.storage.local.set({ dataLayer: JSON.stringify(e.detail) });
 });
 
 document.addEventListener('utag_dataFromPage', function(e) {
-
-  console.log('utag_data: ', JSON.stringify(e.detail));
-
   chrome.storage.local.set({ utag_data: JSON.stringify(e.detail) });
 });
