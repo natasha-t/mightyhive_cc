@@ -1,32 +1,28 @@
 import React, {Component} from 'react';
+import List from './list';
+import ListItem from './listItem';
 
 class GlobalObject extends Component {
   constructor(props) {
     super(props);
 
-    console.log('object props', props);
-  }
-
-  renderObjectName() {
-    console.log('props data from renderObjectName: ', this.props.data);
-    if (this.props.data) {
-      return <h1> {this.props.data[0]} </h1>
-    } else {
-      return <p> bloop </p>
+    this.state = {
+      toggleView: false
     }
   }
 
-  renderObjectContents() {
-    console.log('props data from renderObjectContents: ', this.props.data);
-    if (!this.props.data[1]) {
-      return <p> No objects found </p>
-    } 
+  displayContents() {
+    this.setState({ toggleView: !this.state.toggleView });    
   }
 
   render() {
     return (
-      <div className='object'>
-        {this.renderObjectName()}
+      <div className='object' onClick={this.displayContents.bind(this)}>
+
+        <h2> {this.props.name} </h2>
+
+        { this.state.toggleView ? <List data={this.props.data} /> : null }
+        
       </div>
     );
   }

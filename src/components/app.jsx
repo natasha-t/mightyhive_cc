@@ -6,32 +6,27 @@ class App extends Component {
     super(props);
 
     this.state = {
-      dataLayer: null,
-      utag_data: null,
+      Object_1: 'no-data',
+      Object_2: 'no-data',
     }
   }
 
   componentDidMount() {
-    // this.findObjects();
+
     const component = this;
 
     chrome.storage.local.get('dataLayer', function(data) {
-      console.log('data from chrome storage', data.dataLayer);
+      console.log('dataLayer from chrome storage', JSON.parse(data.dataLayer));
 
-      component.setState({ dataLayer: data.dataLayer });
+      component.setState({ Object_1: JSON.parse(data.dataLayer) });
 
     })
 
     chrome.storage.local.get('utag_data', function(data) {
-      console.log('utag_data: ', data.utag_data);
+      console.log('utag_data: ', JSON.parse(data.utag_data));
 
-      component.setState({ utag_data: data.utag_data });
+      component.setState({ Object_2: JSON.parse(data.utag_data) });
     })
-
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    console.log('previous state: ', prevState, 'curr state: ', this.state);
 
   }
 
@@ -40,7 +35,11 @@ class App extends Component {
 
     return (
       <div className='content'>
-        
+        {Object.entries(this.state).map((objects, index) => {
+
+          return <GlobalObject id={index} key={index + 1} name={objects[0]} data={objects[1]} /> 
+
+        })}
       </div>
     );
   }
