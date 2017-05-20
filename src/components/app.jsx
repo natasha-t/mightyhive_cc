@@ -6,8 +6,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      Object_1: 'no-data',
-      Object_2: 'no-data',
+      Object_1: null,
+      Object_2: null,
     }
   }
 

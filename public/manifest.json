@@ -17,11 +17,6 @@
       "js": ["inject.js"],
       "run_at": "document_end"
     }
-    // {
-    //   "matches": ["*://*/*"],
-    //   "css": [],
-    //   "js": ["content.js"]
-    // }
   ],
 
   "permissions": [
@@ -30,6 +25,6 @@
     "storage"
   ],
 
-  "web_accessible_resources": ["globalVars.js"]
+  "web_accessible_resources": ["getGlobalVars.js"]
 
 }
