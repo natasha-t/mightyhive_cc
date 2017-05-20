@@ -34,12 +34,12 @@ class App extends Component {
     // iterate through this.state, pass data into GlobalObject component instance
 
     return (
-      <div className='content'>
-        {Object.entries(this.state).map((objects, index) => {
+      <div className='container'>
+          {Object.entries(this.state).map((objects, index) => {
 
-          return <GlobalObject id={index} key={index + 1} name={objects[0]} data={objects[1]} /> 
+            return <GlobalObject id={index} key={index + 1} name={objects[0]} data={objects[1]} /> 
 
-        })}
+          })}
       </div>
     );
   }

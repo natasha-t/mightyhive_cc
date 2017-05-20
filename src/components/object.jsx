@@ -17,11 +17,11 @@ class GlobalObject extends Component {
 
   render() {
     return (
-      <div className='object' onClick={this.displayContents.bind(this)}>
+      <div id={'object' + (this.props.id + 1)} className='object' onClick={this.displayContents.bind(this)}>
 
-        <h2> {this.props.name} </h2>
+          <h1> {this.props.name} </h1>
 
-        { this.state.toggleView ? <List data={this.props.data} /> : null }
+          {this.state.toggleView ? <List data={this.props.data} /> : null}
         
       </div>
     );
